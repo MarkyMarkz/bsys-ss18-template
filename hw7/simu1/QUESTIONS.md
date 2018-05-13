@@ -16,7 +16,7 @@ First let’s get ready to run `x86.py` with the flag `-p flag.s`. This code
     1. When you run with the defaults, does `flag.s` work as expected?
 
     2. Does it produce the correct result? Use the `-M` and `-R` flags to trace variables and
-    registers (and turn on `-c` to see their values). Variables start at address `100`.
+       registers (and turn on `-c` to see their values). Variables start at address `100`.
 
     3. Can you predict what value will end up in flag as the code runs?
 
@@ -70,15 +70,15 @@ To run `peterson.s` correctly, the `-a` flag has to be set with the values
 
 ### `ticket.s`
 
-1. Now study the code for the ticket lock in `ticket.s`.
+Now study the code for the ticket lock in `ticket.s`.
 
-    1. Does it match the code in the chapter?
+1. Does it match the code in the chapter?
 
-    2. Now run the code, with the following flags: `-a bx=1000,bx=1000` (this flag
-        sets each thread to loop through the critical 1000 times). Watch what happens
-        over time; do the threads spend much time spinning waiting for the lock?
+2. Now run the code, with the following flags: `-a bx=1000,bx=1000` (this flag
+   sets each thread to loop through the critical 1000 times). Watch what happens
+   over time; do the threads spend much time spinning waiting for the lock?
 
-    3. How does the code behave as you add more threads?
+3. How does the code behave as you add more threads?
 
 ### `yield.s`
 
@@ -88,11 +88,9 @@ OS primitive, but for the simplicity of simulation, we assume there is an
 instruction that does the task).
 
 1. Find a scenario where `test-and-set.s` wastes cycles spinning, but `yield.s`
-   does not.
+   does not. How many instructions are saved?
 
-   1. How many instructions are saved?
-
-   2. In what scenarios do these savings arise?
+2. In what scenarios do these savings arise?
 
 ### `test-and-test-and-set`
 
