@@ -4,7 +4,7 @@
 # - rustfmt
 
 # config
-FOLDER="hw*"
+FOLDER=$(find . -type f | grep "hw./task." | sort | tail -n1 | cut -d / -f -2)
 FILES='.+/src/.+\.(rs)'
 
 
@@ -16,9 +16,9 @@ ERROR=0
 # cross platform compatible find
 function find_files() {
   if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    find . -regextype posix-extended -path "./$FOLDER" -iregex $FILES -print0
+    find . -regextype posix-extended -path "$FOLDER*" -iregex $FILES -print0
   elif [[ "$OSTYPE" == "darwin"* ]]; then
-    find -E . -path "./$FOLDER" -iregex $FILES -print0
+    find -E . -path "$FOLDER*" -iregex $FILES -print0
   fi
 }
 
