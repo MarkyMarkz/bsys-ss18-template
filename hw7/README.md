@@ -29,4 +29,4 @@ Please merge any accepted reviews into your branch. If you are ready with the ho
 | task3    | +1.5 | |
 | simu1    | 1.5 | |
 | Deadline | +1.0 | |
-| =        | 6.0 | |
+| =        | 6.5 | |
