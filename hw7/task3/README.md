@@ -2,7 +2,7 @@
 
 - [Unlimitiertes Pipe Kommando](#unlimitiertes-pipe-kommando)
 - [`&` Parameter](#ampersand-parameter)
-- [`mv` Kommando](#mv-kommando)
+- [`Move` Kommando](#move-kommando)
 
 Beachten Sie, dass Sie zur Implementierung dieser Task, die `task2` bereits implementiert haben müssen (insbesondere den `Library`-Part).
 
@@ -16,9 +16,11 @@ Erweitern Sie Ihre Implementierung des `|` Kommandos aus task2, damit dieses mit
 
 Erweitern Sie Ihre Implementierung so, dass bei einem eingelesenen "Ampersand" (`&`) das aufzurufende Kommando im Hintergrund abgearbeitet wird (vergewissern Sie sich, dass Ihre Implementierung sich genauso verhält wie bei Standard-Shells).
 
-## `mv` Kommando
+Um die Funktionalität zu testen können Sie in Ihrer Shell beispielsweise `sleep 100 &` ausführen, sich anschließened per `ps` die `PID` des Kindprozesses holen und diesen dann mit `kill -9 [PID]` beenden.
 
-Erstellen Sie ein zusätzliches Kommando zum Verschieben von Dateien und Ordnern (achten Sie darauf, den kompletten `Directory-Tree` zu verschieben). Der Aufruf soll dabei folgendermaßen aussehen: `bsys-shell [user]$ mv [source] [target]`. Das Kommando soll nur ausgeführt werden, wenn das `[target]` nicht existiert (um zu verhindern, dass bei der Implementierung Dateien überschrieben werden).
+## `Move` Kommando
+
+Erstellen Sie ein zusätzliches Kommando zum Verschieben von Dateien und Ordnern (achten Sie darauf, den kompletten `Directory-Tree` zu verschieben). Der Aufruf soll dabei folgendermaßen aussehen `bsys-shell [user]$ move [source] [target]` und sich genauso verhalten wie das Binary [mv](https://linux.die.net/man/1/mv), wenn keine Parameter angegeben werden. Das Kommando soll __jedoch__ nur ausgeführt werden, wenn das `[target]` nicht existiert (um zu verhindern, dass bei der Implementierung Dateien überschrieben werden).
 
 ## Kommentare und Tests
 
@@ -27,7 +29,7 @@ Kommentieren Sie Ihre Funktionen und schreiben Sie soweit möglich eigene Integr
 
 Einfache Tests (manchmal sagt ein Test zu einer Funktion mehr als viele
 Kommentarzeilen ...) können auch direkt in die Dokumentation 'codiert' werden,
-siehe [Documentation Tests][]
+siehe [Documentation Tests][].
 
 ## Externe Crates
 
