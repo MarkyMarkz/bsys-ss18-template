@@ -29,11 +29,11 @@ loads a value from the address specified by `2000` into the register `%ax`.
 Addresses, in this subset of `x86`, can take some of the following forms:
 
 ```assembly
-  2000          -> the number (2000) is the address (%cx)         -> contents of
-  register (in parentheses) forms the address 1000(%dx)     -> the number +
-  contents of the register form the address 10(%ax,%bx)   -> the number + reg1 +
-  reg2 forms the address 10(%ax,%bx,4) -> the number + reg1 + (reg2*scaling)
-  forms the address
+  2000          -> the number (2000) is the address
+  (%cx)         -> contents of register (in parentheses) forms the address
+  1000(%dx)     -> the number + contents of the register form the address
+  10(%ax,%bx)   -> the number + reg1 + reg2 forms the address
+  10(%ax,%bx,4) -> the number + reg1 + (reg2*scaling) forms the address
 ```
 
 To store a value, the same `mov` instruction is used, but this time with the
