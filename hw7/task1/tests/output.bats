@@ -19,13 +19,13 @@ load test_helper
 
 # wc output with white correct input is trimmed by xargs
 @test "task1: Normal Output must be at least 4 line long" {
-    run bash -c "'$BATS_TEST_DIRNAME/../target/debug/task1' 42 123 | wc -l | xargs"
+    run bash -c "'$BATS_TEST_DIRNAME/../target/debug/task1' 42 123 2>&1 | wc -l | xargs"
     assert_range 4 4 6
 }
 
 # wc output with white correct input is trimmed by xargs
 @test "task1: Help Output must be at least 18 line long" {
-    run bash -c "'$BATS_TEST_DIRNAME/../target/debug/task1' -- --help | wc -l | xargs"
+    run bash -c "'$BATS_TEST_DIRNAME/../target/debug/task1' --help 2>&1 | wc -l | xargs"
     assert_range 18 18 20
 }
 

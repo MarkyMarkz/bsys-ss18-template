@@ -1,35 +1,34 @@
-# Homework hw7 t2
+# Homework hw7 task2
 
 - [Migration der Shell in ein Library
   Projekt](#migration-der-shell-in-ein-library-projekt)
 - [Eigener Fehler Typ](#eigener-fehler-typ)
 - [Neue Commands](#neue-commands)
-    - [execv](#execv)
-    - [pipe](#pipe)
+  - [execv](#execv)
+  - [pipe](#pipe)
 - [Kommentare und Tests](#kommentare-und-tests)
 - [Externe Crates](#externe-crates)
 
 ## Migration der Shell in ein Library Projekt
 
 Legen Sie ein Library Projekt an mit einer zusätzlichen `main.rs` Datei. Wandeln
-Sie Ihre Shell Lösung aus hw6 in ein Library Projekt, welche mittels cargo run
-die Shell - wie bisher - im interaktiven Modus startet.
+Sie Ihre Shell Lösung aus hw6 in ein Library Projekt (falls Sie dies nicht schon in der hw6 gemacht haben), welche mittels cargo run die Shell - wie bisher - im interaktiven Modus startet.
 
 Verschieben Sie Ihre Tests der Library nach `tests/task2.rs`.
 
 ## Eigener Fehler Typ
 
-Definieren Sie einen eigenen Fehler Typen, den Sie in Ihren Funktionen benutzen.
+Definieren Sie einen eigenen Fehler-Typ, den Sie in Ihren Funktionen benutzen.
 Definieren Sie den `ShellError` und die zugehörigen Traits im Modul
 `shellerror.rs`. Der eigene Fehler soll in allen Ihren Funktionen verwendet
-werden, die einen Fehlertypen zurück geben.
+werden, die einen Fehler zurück geben.
 
 ## Neue Commands
 
 ### execv
 
 Die Eingabe wird als Aufruf eines Programms, inkl. Parameter, ausgewertet und es
-wird versucht, das zugehörige Programm zu starten (mit *execvp()*). Wird das
+wird versucht, das zugehörige Programm zu starten (mit `execvp()`). Wird das
 Programm nicht gefunden, so wird eine Fehlermeldung ausgegeben.
 
 ```text
@@ -48,21 +47,19 @@ exit
 
 ### pipe
 
-Die Pipe (**|**) ist hier als Command angegeben, da sie eine neue Art des
+Die Pipe (`|`) ist hier als Command angegeben, da sie eine neue Art des
 Programmaufrufs implementiert. Beachten Sie dazu auch die Informationen aus der
 Vorlesung, insbesondere die Reihenfolge, wie die Kommandos rechts und links der
 jeweiligen Pipe aufzurufen sind. Scannen Sie somit die Eingabe nach Pipes und
 teilen Sie den String entsprechend in Substrings auf. Die Substrings entsprechen
 den einzelnen Programmen, die miteinander per Pipe verbunden werden. Es genügt,
-wenn 2 Programme per Pipe verbunden werden. Eingaben wie **cat filename.txt |
-grep grading | sort**, also mehr als eine Pipe, müssen nicht interpretiert und
-implementiert werden.
+wenn 2 Programme per Pipe verbunden werden. Eingaben wie `cat filename.txt |
+grep grading | sort`, also mehr als eine Pipe, müssen nicht (können aber) interpretiert und implementiert werden.
 
 ## Kommentare und Tests
 
-Kommentieren Sie Ihre Funktionen und schreiben Sie eigene Integration Tests in
-tests/ soweit möglich. Die Dokumentation soll sich per **cargo doc** erstellen
-lassen.
+Kommentieren Sie Ihre Funktionen und schreiben Sie soweit möglich eigene Integration Tests in
+`tests/`. Die Dokumentation soll sich per `cargo rustdoc -- --document-private-items` erstellen lassen.
 
 Einfache Tests (manchmal sagt ein Test zu einer Funktion mehr als viele
 Kommentarzeilen ...) können auch direkt in die Dokumentation 'codiert' werden,
@@ -71,8 +68,6 @@ siehe [Documentation Tests][]
 ## Externe Crates
 
 Benutzen Sie für Ihre Implementierung nur die externe Crate `nix`.
-
-
 
 [Documentation Tests]:
 https://doc.rust-lang.org/book/testing.html#documentation-tests
