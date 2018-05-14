@@ -37,5 +37,5 @@
 ?./hw7/task3/src/lib.rs
 ?./hw7/task3/src/main.rs
 ?./hw7/task3/src/shell.rs
-?./hw7/task3/src/commandrs
+?./hw7/task3/src/command.rs
 
