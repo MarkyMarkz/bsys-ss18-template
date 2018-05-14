@@ -3,11 +3,13 @@
 .var count
 
 .main
+add $2, %bx
+
 .top	
 
 .acquire
 mov $1, %ax
-fetchadd %ax, ticket  # grab a ticket (keep it in dx)
+fetchadd %ax, ticket  # grab a ticket
 .tryagain
 mov turn, %cx         # check if it's your turn 
 test %cx, %ax

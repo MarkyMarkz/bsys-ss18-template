@@ -13,14 +13,14 @@ First let’s get ready to run `x86.py` with the flag `-p flag.s`. This code
 
 1. Explain what the assembly code is trying to do?
 
-    1. When you run with the defaults, does `flag.s` work as expected?
+    1. When you run with the defaults, does `flag.s` work as expected? Why?
 
     2. Does it produce the correct result? Use the `-M` and `-R` flags to trace variables and
        registers (and turn on `-c` to see their values). Variables start at address `100`.
 
-    3. Can you predict what value will end up in flag as the code runs?
+    3. Can you predict what value will end up in `count` as the code runs?
 
-2. Change the value of the register `%bx` with the `-a` flag (e.g., `-a bx=2`,`bx=2` if
+2. Change the value of the register `%bx` with the `-a` flag (e.g., `-a bx=3`,`bx=3` if
    you are running just two threads). What does the code do? How does it change
    your answer for the question above?
 
@@ -75,7 +75,7 @@ Now study the code for the ticket lock in `ticket.s`.
 1. Does it match the code in the chapter?
 
 2. Now run the code, with the following flags: `-a bx=1000,bx=1000` (this flag
-   sets each thread to loop through the critical 1000 times). Watch what happens
+   sets each thread to loop). Watch what happens
    over time; do the threads spend much time spinning waiting for the lock?
 
 3. How does the code behave as you add more threads?

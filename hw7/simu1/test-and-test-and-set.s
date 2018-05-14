@@ -2,6 +2,8 @@
 .var count
 
 .main
+add $2, %bx
+
 .top	
 
 .acquire

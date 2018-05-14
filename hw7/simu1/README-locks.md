@@ -182,7 +182,7 @@ multiple threads. Let's look at the code first:
   # see if we're still looping
   sub  $1, %bx
   test $0, %bx
-  jgt .top
+  jgte .top
 
   halt
 ```
